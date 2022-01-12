@@ -2,21 +2,32 @@
 
 namespace App\Repository;
 
-use App\Entity\Show;
+use App\Entity\Concert;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @method Show|null find($id, $lockMode = null, $lockVersion = null)
- * @method Show|null findOneBy(array $criteria, array $orderBy = null)
- * @method Show[]    findAll()
- * @method Show[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Concert|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Concert|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Concert[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ShowRepository extends ServiceEntityRepository
+class ConcertRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Show::class);
+        parent::__construct($registry, Concert::class);
+    }
+
+    /**
+     * @return array|object[]
+     */
+    public function findAll()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.date', 'ASC')
+            ->getQuery()
+            ->getResult();
+
     }
 
     // /**

@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\ShowRepository;
+use App\Repository\ConcertRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ShowRepository::class)
+ * @ORM\Entity(repositoryClass=ConcertRepository::class)
  */
-class Show
+class Concert
 {
     /**
      * @ORM\Id

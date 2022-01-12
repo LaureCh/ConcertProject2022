@@ -2,10 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Concert;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class ConcertController
+ * @package App\Controller
+ */
 class ConcertController extends AbstractController
 {
     /**
